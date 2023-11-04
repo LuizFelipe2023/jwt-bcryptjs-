@@ -43,7 +43,7 @@ const authController = {
         try {
             const secret = process.env.jwt_secret;
             const verified = jwt.verify(token, secret);
-            req.user = { userId: verified.id }; // Corrigido para passar o objeto corretamente
+            req.user = { userId: verified.id }; 
             next();
         } catch (error) {
             res.status(401).json({ error: 'Token inválido.' });
